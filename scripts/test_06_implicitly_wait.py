@@ -1,6 +1,6 @@
 # Test 6 - Implicitly wait
 # ----------------------------------------------------------------------------------------------------------------------
-# Se introduce "implicit wait", que consiste en el tiempo en que selenium estara intentando obtener un elemento.
+# Se introduce "implicitly wait", que consiste en el tiempo en que selenium estara intentando obtener los elementos.
 # Esto es util cuando la pagina se carga gradualmente. Asi, en lugar de lanzar un error al inicio de la ejecucion
 # del script porque no se ha encontrado un elemento, mejor se espera un momento con el fin de que el elemento
 # sea cargado durante ese tiempo.
