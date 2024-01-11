@@ -11,7 +11,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 
-from .library import links
+from library import links
 import time
 
 driver = webdriver.Chrome(

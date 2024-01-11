@@ -12,7 +12,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-from .library import links
+from library import links
 import time
 
 driver = webdriver.Chrome(
@@ -25,7 +25,7 @@ driver.maximize_window()
 time.sleep(1)
 
 try:
-    file = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='659b84125da18-ii-input-file']")))
+    file = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='659b84125da18-ii-input-file']")))
     file.send_keys('C:/Users/HUMBERTO/Documents/Github/SeleniumTestQaAutomation/files/image.png')
     print('Pass Image File')
     time.sleep(2)
@@ -37,7 +37,7 @@ try:
     btn.click()
     print('Pass Ajust Button') 
 except TimeoutException as e:
-    print("Error, element not found: ", e.msg)
+    print("Error, element not found: ")
 
 driver.execute_script('window.scrollTo(0, 300)')
 time.sleep(4)

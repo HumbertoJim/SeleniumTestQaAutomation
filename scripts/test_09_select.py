@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.select import Select
 
-from .library import links
+from library import links
 import time
 
 driver = webdriver.Chrome(
