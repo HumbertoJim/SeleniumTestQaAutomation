@@ -1,5 +1,12 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.remote.webelement import WebElement
+
+import time
 import enum
-from typing import Any
 
 
 class str_dict(dict):
@@ -16,9 +23,10 @@ data = str_dict(
     address='ipsum lorem',
     city='CDMX',
     cp='5000',
-    message='test'
+    message='test',
+    username='san',
+    password='tiago'
 )
-
 
 class links():
     BASIC_FORM = 'https://validaciones.rodrigovillanueva.com.mx/index.html'
@@ -37,3 +45,51 @@ class links():
     SELENIUM_ALERT = 'https://www.selenium.dev/selenium/web/alerts.html'
     PIXABAY = 'https://pixabay.com/es/'
     ALERT_VALIDATION = 'https://the-internet.herokuapp.com/javascript_alerts'
+    SAUCEDEMO = 'https://www.saucedemo.com/v1/'
+
+class SeleniumWebDriverSimplifier:
+    class WebDriver(enum.Enum):
+        CHROME = enum.auto()
+        FIREFOX = enum.auto()
+
+    def __init__(self, driver=WebDriver.CHROME, implicitly_wait=5, explicitly_wait=10) -> None:
+        if driver == SeleniumWebDriverSimplifier.WebDriver.CHROME:
+            self.driver = webdriver.Chrome(webdriver.ChromeOptions(), webdriver.ChromeService('dependencies/webdrivers/chromedriver.exe'))
+        else:
+            self.driver = webdriver.Firefox(webdriver.FirefoxOptions(), webdriver.FirefoxService('dependencies/webdrivers/geckodriver.exe'))
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(implicitly_wait)
+        self.explicitly_wait = explicitly_wait
+
+    def sleep(self, seconds: int = 2) -> None:
+        time.sleep(seconds)
+
+    def get(self, url: str) -> None:
+        self.driver.get(url)
+
+    def find_element(self, value: str, by = By.XPATH) -> WebElement:
+        elem = self.driver.find_element(by=by, value=value)
+        self.driver.execute_script('arguments[0].scrollIntoView()', elem)
+        return elem
+    
+    def find_element_with_EC(self, value: str, by = By.XPATH, expected_condition = EC.visibility_of_element_located) -> WebElement:
+        elem = WebDriverWait(self.driver, self.explicitly_wait).until(
+            expected_condition([by, value])
+        )
+        self.driver.execute_script('arguments[0].scrollIntoView()', elem)
+        return elem
+    
+    def find_select(self, value: str, by = By.XPATH) -> Select:
+        elem = self.find_element(value, by)
+        select = Select(elem)
+        return select
+    
+    def find_select_with_EC(self, value: str, by = By.XPATH, expected_condition = EC.visibility_of_element_located) -> Select:
+        elem = self.find_element(value, by, expected_condition)
+        select = Select(elem)
+        return select
+    
+    def close(self, exit_time: int = 4):
+        self.sleep(exit_time)
+        self.driver.close()
+        print('Finished')
