@@ -29,7 +29,7 @@ driver.find_element(By.XPATH, "//input[@id='nombre']").send_keys(data.get('name'
 driver.find_element(By.XPATH, "//input[@id='apellidos']").send_keys(data.get('lastname'))
 driver.find_element(By.XPATH, "//input[@id='tel']").send_keys(data.get('phone'))
 driver.find_element(By.XPATH, "//input[@id='email']").send_keys(data.get('email'))
-driver.find_element(By.XPATH, "//input[@id='direccion']").send_keys(data.get('direction'))
+driver.find_element(By.XPATH, "//input[@id='direccion']").send_keys(data.get('address'))
 driver.find_element(By.XPATH, "//button[@type='submit']").click()
 
 driver.execute_script('window.scrollTo(0, 300)')

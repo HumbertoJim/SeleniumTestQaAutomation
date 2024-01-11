@@ -15,7 +15,7 @@ data = dict(
     lastname='Jim',
     phone='0123456789',
     email='test@gmail.com',
-    direction='ipsum lorem'
+    address='ipsum lorem'
 )
 
 driver = webdriver.Chrome(
@@ -38,7 +38,7 @@ time.sleep(1)
 driver.find_element(By.CSS_SELECTOR, "input[name='email']").send_keys(data.get('email'))
 time.sleep(1)
 
-driver.find_element(By.CSS_SELECTOR, "input[name='direccion']").send_keys(data.get('direction'))
+driver.find_element(By.CSS_SELECTOR, "input[name='direccion']").send_keys(data.get('address'))
 time.sleep(1)
 
 driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()

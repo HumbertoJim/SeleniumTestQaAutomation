@@ -25,7 +25,7 @@ driver.maximize_window()
 time.sleep(1)
 
 try:
-    file = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='659b84125da18-ii-input-file']")))
+    file = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='659b84125da18-ii-input-file']")))
     file.send_keys('C:/Users/HUMBERTO/Documents/Github/SeleniumTestQaAutomation/files/image.png')
     print('Pass Image File')
     time.sleep(2)

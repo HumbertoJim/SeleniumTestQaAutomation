@@ -15,7 +15,7 @@ data = dict(
     lastname='Jim',
     phone='0123456789',
     email='test@gmail.com',
-    direction='ipsum lorem'
+    address='ipsum lorem'
 )
 
 driver =  webdriver.Chrome(
@@ -38,7 +38,7 @@ time.sleep(1)
 driver.find_element(By.ID, 'email').send_keys(data['email'])
 time.sleep(1)
 
-driver.find_element(By.ID, 'direccion').send_keys(data['direction'])
+driver.find_element(By.ID, 'direccion').send_keys(data['address'])
 time.sleep(1)
 
 driver.find_element(By.XPATH, "//button[@type='submit' and contains(., 'Enviar')]").click()

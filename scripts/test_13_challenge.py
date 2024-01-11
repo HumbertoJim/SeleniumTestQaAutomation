@@ -1,6 +1,7 @@
 # Test 13 - Challenge
 # ----------------------------------------------------------------------------------------------------------------------
-# Codigo para superar el primer reto del curso. Dado que la pagina del reto original fue dado de baja, se utilizo otra
+# Codigo para superar el primer reto del curso, el cual consiste en aplicar todo lo aprendido para llenar todos los
+# campos del formulario y enviarlo sin problemas. Dado que la pagina del reto original fue dado de baja, se utilizo otra
 # pagina similar, en lo que a campos y tipos de campos se refiere.
 
 from selenium import webdriver
@@ -30,8 +31,8 @@ try:
     name.send_keys(
         Keys.TAB + data.get('email') +
         Keys.TAB + data.get('phone') +
-        Keys.TAB + data.get('direction') +
-        Keys.TAB + data.get('direction') +
+        Keys.TAB + data.get('address') +
+        Keys.TAB + data.get('address') +
         Keys.TAB + data.get('city')
     )
 

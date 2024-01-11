@@ -19,7 +19,7 @@ data = dict(
     lastname='Jim',
     phone='0123456789',
     email='test@gmail.com',
-    direction='ipsum lorem'
+    address='ipsum lorem'
 )
 
 driver = webdriver.Chrome(
@@ -40,7 +40,7 @@ name.send_keys(
     Keys.TAB +
     data.get('email') +
     Keys.TAB +
-    data.get('direction') +
+    data.get('address') +
     Keys.TAB +
     Keys.ENTER
 )

@@ -5,6 +5,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
+import time
 
 driver = webdriver.Chrome(
     service=Service('dependencies/webdrivers/chromedriver.exe'),
@@ -16,5 +17,6 @@ driver.get('https://docs.unity3d.com/Manual/index.html')
 print('Bienvenido Selenium')
 print(driver.title)
 
+time.sleep(2)
 driver.close()
 
