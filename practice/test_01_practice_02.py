@@ -8,7 +8,7 @@ from library.commons import Dependencies, Links, Data
 import unittest
 import time
 
-class LoginPage:
+class SauceDemoPage:
     def __init__(self, driver : webdriver.Chrome) -> None:
         self.driver = driver
 
@@ -41,11 +41,11 @@ class PracticeTest(unittest.TestCase):
         return super().tearDown()
     
     def test_login_bad(self):
-        msg = LoginPage(self.driver).Login(Data.USERNAME, Data.PASSWORD)
+        msg = SauceDemoPage(self.driver).Login(Data.USERNAME, Data.PASSWORD)
         return 'Test Bad Login: ' + 'OK' if msg != '' else 'BAD'
     
     def test_login_ok(self):
-        msg = LoginPage(self.driver).Login('standard_user', 'secret_sauce')
+        msg = SauceDemoPage(self.driver).Login('standard_user', 'secret_sauce')
         return 'Test Ok Login: ' + 'OK' if msg == '' else 'BAD'
     
 if __name__ == '__main__':

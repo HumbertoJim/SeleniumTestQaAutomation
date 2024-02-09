@@ -24,6 +24,7 @@ class Links():
     PIXABAY = 'https://pixabay.com/es/'
     ALERT_VALIDATION = 'https://the-internet.herokuapp.com/javascript_alerts'
     SAUCEDEMO = 'https://www.saucedemo.com/v1/'
+    NOPCOMMERCE_ADMINDEMO = 'https://admin-demo.nopcommerce.com/login'
 
 class Files:
     class Images:
@@ -40,3 +41,4 @@ class Data:
     MESSAGE = 'test'
     USERNAME = 'san'
     PASSWORD = 'tiago'
+    LOREM_IPSUM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
