@@ -74,3 +74,6 @@ class SeleniumWebDriver:
     def close(self, exit_time: int = 4):
         self.sleep(exit_time)
         self.driver.close()
+
+    def get_screenshot_as_png(self):
+        return self.driver.get_screenshot_as_png()
