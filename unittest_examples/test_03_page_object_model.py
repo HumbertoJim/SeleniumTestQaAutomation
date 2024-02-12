@@ -1,4 +1,4 @@
-# Test 22 - Page Object Model
+# Test 03 - Page Object Model
 # ----------------------------------------------------------------------------------------------------------------------
 # Demostracion del Page Object Model. En este codigo se muestra como se ha reducido en gran medida el numero de lineas
 # empleadas para 

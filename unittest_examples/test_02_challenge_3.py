@@ -1,4 +1,4 @@
-# Test 21 - Challenge 3
+# Test 02 - Challenge 3
 # ----------------------------------------------------------------------------------------------------------------------
 # Codigo para superar el tercer reto del curso, el cual consiste en verificar todas las posibles entradas para loguearse
 # en una pagina. Estas pruebas incluyen desde dejar los campos vacios, ingresar datos erroneos y datos correctos. Para
