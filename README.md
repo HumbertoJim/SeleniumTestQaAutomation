@@ -5,6 +5,7 @@
  * pip install pytest
  * pip install pytest-soft-assertions
  * pip install pytest-html
+ * pip install allure-pytest
  
 Also you can install all packages with **pip install -r requirements.txt**
 
@@ -13,7 +14,8 @@ Also you can install all packages with **pip install -r requirements.txt**
  * pytest [full_file_name]
  * pytest [full_file_name] -v -s
  * pytest [full_file_name] --soft-asserts
- * pytest [full_file_name] --html=[report_name.html]
+ * pytest [full_file_name] --html=[report_folder/report_name.html]
+ * pytest [full_file_name] --alluredir=[reporte_folder]
 
 ## Allure Reports
  * https://allurereport.org/docs/gettingstarted-installation/
